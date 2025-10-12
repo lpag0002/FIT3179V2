@@ -61,7 +61,23 @@
     </p>
   </div>
 </div>
-
+<div class="vis-container">
+  <div class="vis-box">
+    <h2>Mean vs Median Weekly Gross Household Income Over Time</h2>
+    <div id="vis5"></div>
+    <p class="vis-description">
+      We can see that both mean and median income is growing, however mean is consistently greater than median, indicating a small number of households having significantly higher income than the majority
+    </p>
+  </div>
+  <div class="vis-box">
+    <h2>Mean vs Median Household Net Worth 2009-20</h2>
+    <div id="vis6"></div>
+    <p class="vis-description">
+      Here we can see that the gap between median and mean is growing, indicating that with regards to net worth, the richest households are accumulating more wealth than the rest. 
+    </p>
+  </div>
+</div>
+  
 <script>
   const spec1 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
@@ -355,16 +371,126 @@ const spec4 = {
     ]
   }
 };
+  const spec5 = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Mean and Median Weekly Gross Household Income over time",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "values": [
+      { "Year": "2000–01", "Type": "Mean", "Income": 1486 },
+      { "Year": "2000–01", "Type": "Median", "Income": 1181 },
+      { "Year": "2002–03", "Type": "Mean", "Income": 1574 },
+      { "Year": "2002–03", "Type": "Median", "Income": 1261 },
+      { "Year": "2003–04", "Type": "Mean", "Income": 1633 },
+      { "Year": "2003–04", "Type": "Median", "Income": 1325 },
+      { "Year": "2005–06", "Type": "Mean", "Income": 1789 },
+      { "Year": "2005–06", "Type": "Median", "Income": 1426 },
+      { "Year": "2007–08(d)", "Type": "Mean", "Income": 2123 },
+      { "Year": "2007–08(d)", "Type": "Median", "Income": 1656 },
+      { "Year": "2009–10", "Type": "Mean", "Income": 2058 },
+      { "Year": "2009–10", "Type": "Median", "Income": 1610 },
+      { "Year": "2011–12", "Type": "Mean", "Income": 2137 },
+      { "Year": "2011–12", "Type": "Median", "Income": 1669 },
+      { "Year": "2013–14", "Type": "Mean", "Income": 2273 },
+      { "Year": "2013–14", "Type": "Median", "Income": 1705 },
+      { "Year": "2015–16", "Type": "Mean", "Income": 2253 },
+      { "Year": "2015–16", "Type": "Median", "Income": 1727 },
+      { "Year": "2017–18", "Type": "Mean", "Income": 2310 },
+      { "Year": "2017–18", "Type": "Median", "Income": 1753 },
+      { "Year": "2019–20", "Type": "Mean", "Income": 2329 },
+      { "Year": "2019–20", "Type": "Median", "Income": 1786 }
+    ]
+  },
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": "Year"
+    },
+    "y": {
+      "field": "Income",
+      "type": "quantitative",
+      "title": "Weekly Gross Household Income ($)"
+    },
+    "color": {
+      "field": "Type",
+      "type": "nominal",
+      "title": "Income Type"
+    },
+    "tooltip": [
+      { "field": "Year" },
+      { "field": "Type" },
+      { "field": "Income" }
+    ]
+  }
+};
+const spec6 = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Mean and Median Household Net Worth from 2009-10 onward",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "values": [
+      { "Year": "2009–10", "Type": "Mean", "NetWorth": 878 },
+      { "Year": "2009–10", "Type": "Median", "NetWorth": 519 },
+      { "Year": "2011–12", "Type": "Mean", "NetWorth": 842 },
+      { "Year": "2011–12", "Type": "Median", "NetWorth": 502 },
+      { "Year": "2013–14", "Type": "Mean", "NetWorth": 893 },
+      { "Year": "2013–14", "Type": "Median", "NetWorth": 509 },
+      { "Year": "2015–16", "Type": "Mean", "NetWorth": 993 },
+      { "Year": "2015–16", "Type": "Median", "NetWorth": 563 },
+      { "Year": "2017–18", "Type": "Mean", "NetWorth": 1054 },
+      { "Year": "2017–18", "Type": "Median", "NetWorth": 576 },
+      { "Year": "2019–20", "Type": "Mean", "NetWorth": 1042 },
+      { "Year": "2019–20", "Type": "Median", "NetWorth": 579 }
+    ]
+  },
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": "Year"
+    },
+    "y": {
+      "field": "NetWorth",
+      "type": "quantitative",
+      "title": "Household Net Worth ($'000)"
+    },
+    "color": {
+      "field": "Type",
+      "type": "nominal",
+      "title": "Net Worth Type"
+    },
+    "tooltip": [
+      { "field": "Year" },
+      { "field": "Type" },
+      { "field": "NetWorth" }
+    ]
+  }
+};
+
 
 
   vegaEmbed('#vis1', spec1).then(console.log).catch(console.error);
   vegaEmbed('#vis2', spec2).then(console.log).catch(console.error);
   vegaEmbed('#vis3', spec3).then(console.log).catch(console.error);
   vegaEmbed('#vis4', spec4).then(console.log).catch(console.error);
+  vegaEmbed('#vis5', spec5).then(console.log).catch(console.error);
+  vegaEmbed('#vis6', spec6).then(console.log).catch(console.error);
 </script>
 
 </body>
 </html>
+
 
 
 
