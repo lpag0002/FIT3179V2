@@ -15,14 +15,24 @@
       width: 700px;
       height: 600px;
     }
+    .vis-container {
+    display: flex;
+    gap: 20px; /* optional: space between charts */
+    }
+
+#vis1, #vis2 {
+  flex: 1; /* make them take equal width */
+  max-width: 600px; /* limit width */
+  height: 500px;
+}
   </style>
 </head>
 <body>
-
-<h2>Median Income by Australian State</h2>
-<div id="vis1"></div>
-<h2>Median Weekly Earnings Line Chart</h2>
-<div id="vis2"></div>
+<h2>Australian Median Income and Weekly Earnings</h2>
+<div class="vis-container">
+  <div id="vis1"></div>
+  <div id="vis2"></div>
+</div>
 
 <script>
   const spec1 = {
@@ -164,6 +174,7 @@ const spec2 = {
 
 </body>
 </html>
+
 
 
 
