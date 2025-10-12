@@ -45,6 +45,22 @@
     </p>
   </div>
 </div>
+  <div class="vis-container">
+  <div class="vis-box">
+    <h2>Median Income by Industry</h2>
+    <div id="vis3"></div>
+    <p class="vis-description">
+      TODO
+    </p>
+  </div>
+  <div class="vis-box">
+    <h2>Median Weekly Income by Education</h2>
+    <div id="vis4"></div>
+    <p class="vis-description">
+      TODO
+    </p>
+  </div>
+</div>
 
 <script>
   const spec1 = {
@@ -179,13 +195,177 @@ const spec2 = {
     }
   ]
 };
+  const spec3 = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Median income by industry, filterable by year",
+  "width": 500,
+  "height": 500,
+  "data": {
+    "values": [
+      { "Industry": "Mining", "Year": "Aug-19", "Income": 2301 },
+      { "Industry": "Mining", "Year": "Aug-24", "Income": 2593 },
+      { "Industry": "Electricity, gas, water and waste services", "Year": "Aug-19", "Income": 1600 },
+      { "Industry": "Electricity, gas, water and waste services", "Year": "Aug-24", "Income": 1895 },
+      { "Industry": "Professional, scientific and technical services", "Year": "Aug-19", "Income": 1455 },
+      { "Industry": "Professional, scientific and technical services", "Year": "Aug-24", "Income": 1841 },
+      { "Industry": "Financial and insurance services", "Year": "Aug-19", "Income": 1503 },
+      { "Industry": "Financial and insurance services", "Year": "Aug-24", "Income": 1750 },
+      { "Industry": "Public administration and safety", "Year": "Aug-19", "Income": 1498 },
+      { "Industry": "Public administration and safety", "Year": "Aug-24", "Income": 1750 },
+      { "Industry": "Information Media and telecommunications", "Year": "Aug-19", "Income": 1349 },
+      { "Industry": "Information Media and telecommunications", "Year": "Aug-24", "Income": 1615 },
+      { "Industry": "Wholesale trade", "Year": "Aug-19", "Income": 1150 },
+      { "Industry": "Wholesale trade", "Year": "Aug-24", "Income": 1518 },
+      { "Industry": "Construction", "Year": "Aug-19", "Income": 1290 },
+      { "Industry": "Construction", "Year": "Aug-24", "Income": 1500 },
+      { "Industry": "Transport, postal and warehousing", "Year": "Aug-19", "Income": 1238 },
+      { "Industry": "Transport, postal and warehousing", "Year": "Aug-24", "Income": 1500 },
+      { "Industry": "Education and training", "Year": "Aug-19", "Income": 1200 },
+      { "Industry": "Education and training", "Year": "Aug-24", "Income": 1500 },
+      { "Industry": "Manufacturing", "Year": "Aug-19", "Income": 1127 },
+      { "Industry": "Manufacturing", "Year": "Aug-24", "Income": 1400 },
+      { "Industry": "Rental, hiring and real estate services", "Year": "Aug-19", "Income": 1108 },
+      { "Industry": "Rental, hiring and real estate services", "Year": "Aug-24", "Income": 1400 },
+      { "Industry": "Administrative and support services", "Year": "Aug-19", "Income": 950 },
+      { "Industry": "Administrative and support services", "Year": "Aug-24", "Income": 1263 },
+      { "Industry": "Health care and social assistance", "Year": "Aug-19", "Income": 1000 },
+      { "Industry": "Health care and social assistance", "Year": "Aug-24", "Income": 1240 },
+      { "Industry": "Agriculture, forestry and fishing", "Year": "Aug-19", "Income": 1043 },
+      { "Industry": "Agriculture, forestry and fishing", "Year": "Aug-24", "Income": 1200 },
+      { "Industry": "Other services", "Year": "Aug-19", "Income": 961 },
+      { "Industry": "Other services", "Year": "Aug-24", "Income": 1200 },
+      { "Industry": "Arts and recreation services", "Year": "Aug-19", "Income": 898 },
+      { "Industry": "Arts and recreation services", "Year": "Aug-24", "Income": 1000 },
+      { "Industry": "Retail trade", "Year": "Aug-19", "Income": 704 },
+      { "Industry": "Retail trade", "Year": "Aug-24", "Income": 893 },
+      { "Industry": "Accommodation and food services", "Year": "Aug-19", "Income": 500 },
+      { "Industry": "Accommodation and food services", "Year": "Aug-24", "Income": 650 }
+    ]
+  },
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": "Aug-24",
+      "bind": {
+        "input": "select",
+        "options": ["Aug-19", "Aug-24"],
+        "labels": ["August 2019", "August 2024"],
+        "name": "Select Year: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.Year === selectedYear"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "Industry",
+      "type": "nominal",
+      "sort": "-x",
+      "title": "Industry"
+    },
+    "x": {
+      "field": "Income",
+      "type": "quantitative",
+      "title": "Median Weekly Income ($)"
+    },
+    "color": {
+      "field": "Industry",
+      "type": "nominal",
+      "legend": null
+    },
+    "tooltip": [
+      { "field": "Industry", "type": "nominal" },
+      { "field": "Income", "type": "quantitative" }
+    ]
+  }
+};
+const spec4 = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Median income by education level with year filter",
+  "width": 500,
+  "height": 400,
+  "data": {
+    "values": [
+      { "Education": "Postgraduate Degree", "Year": "Aug-19", "Income": 1610 },
+      { "Education": "Postgraduate Degree", "Year": "Aug-24", "Income": 1925 },
+      { "Education": "Graduate Diploma/Graduate Certificate", "Year": "Aug-19", "Income": 1500 },
+      { "Education": "Graduate Diploma/Graduate Certificate", "Year": "Aug-24", "Income": 1749 },
+      { "Education": "Bachelor Degree", "Year": "Aug-19", "Income": 1346 },
+      { "Education": "Bachelor Degree", "Year": "Aug-24", "Income": 1632 },
+      { "Education": "Advanced Diploma/Diploma", "Year": "Aug-19", "Income": 1150 },
+      { "Education": "Advanced Diploma/Diploma", "Year": "Aug-24", "Income": 1400 },
+      { "Education": "Certificate III/IV", "Year": "Aug-19", "Income": 1150 },
+      { "Education": "Certificate III/IV", "Year": "Aug-24", "Income": 1400 },
+      { "Education": "Certificate I/II and Other", "Year": "Aug-19", "Income": 1000 },
+      { "Education": "Certificate I/II and Other", "Year": "Aug-24", "Income": 1299 },
+      { "Education": "No Non-School Qualifications", "Year": "Aug-19", "Income": 825 },
+      { "Education": "No Non-School Qualifications", "Year": "Aug-24", "Income": 1000 }
+    ]
+  },
+  "params": [
+    {
+      "name": "selectedYearEd",
+      "value": "Aug-24",
+      "bind": {
+        "input": "select",
+        "options": ["Aug-19", "Aug-24"],
+        "labels": ["August 2019", "August 2024"],
+        "name": "Select Year: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.Year === selectedYearEd"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "Education",
+      "type": "nominal",
+      "sort": [
+        "No Non-School Qualifications",
+        "Certificate I/II and Other",
+        "Certificate III/IV",
+        "Advanced Diploma/Diploma",
+        "Bachelor Degree",
+        "Graduate Diploma/Graduate Certificate",
+        "Postgraduate Degree"
+      ],
+      "title": "Education Level"
+    },
+    "x": {
+      "field": "Income",
+      "type": "quantitative",
+      "title": "Median Weekly Income ($)"
+    },
+    "color": {
+      "field": "Education",
+      "type": "nominal",
+      "legend": null
+    },
+    "tooltip": [
+      { "field": "Education", "type": "nominal" },
+      { "field": "Income", "type": "quantitative" }
+    ]
+  }
+};
+
 
   vegaEmbed('#vis1', spec1).then(console.log).catch(console.error);
   vegaEmbed('#vis2', spec2).then(console.log).catch(console.error);
+  vegaEmbed('#vis3', spec3).then(console.log).catch(console.error);
+  vegaEmbed('#vis4', spec4).then(console.log).catch(console.error);
 </script>
 
 </body>
 </html>
+
 
 
 
