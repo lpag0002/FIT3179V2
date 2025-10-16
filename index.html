@@ -15,16 +15,25 @@
       width: 600px;
       height: 500px;
     }
+   h1 {
+    text-align: center;  
+    color: #333;         
+    margin-top: 50px;   
+   }
     .vis-box {
-    border: 2px solid #000;
-    background-color: #a8dadc;
-    display: flex;          
-    justify-content: center;
-    align-items: center;
-    margin: 100px auto;     
-    box-sizing: border-box; 
-    border-radius: 10px;
-  }
+  width: 300px;
+  height: 200px;
+  border: 2px solid #000;
+  background-color: #a8dadc;
+  display: flex;
+  flex-direction: column;  
+  justify-content: center; 
+  align-items: center;     
+  margin: 100px auto;
+  box-sizing: border-box;
+  border-radius: 10px;
+  text-align: center;      
+}
 
 #vis1, #vis2 {
   flex: 1; /* make them take equal width */
@@ -494,6 +503,7 @@ const spec6 = {
 
 </body>
 </html>
+
 
 
 
