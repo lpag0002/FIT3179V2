@@ -15,10 +15,16 @@
       width: 600px;
       height: 500px;
     }
-    .vis-container {
-    display: flex;
-    gap: 20px; /* optional: space between charts */
-    }
+    .vis-box {
+    border: 2px solid #000;
+    background-color: #a8dadc;
+    display: flex;          
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;     
+    box-sizing: border-box; 
+    border-radius: 10px;
+  }
 
 #vis1, #vis2 {
   flex: 1; /* make them take equal width */
@@ -29,7 +35,6 @@
 </head>
 <body>
 <h1>Income Accross Australia</h1>
-<div class="vis-container">
   <div class="vis-box">
     <h2>Median Income by Australian State</h2>
     <div id="vis1"></div>
@@ -44,8 +49,7 @@
       Even when accounting for number of hours worked, in Australia, men make more money on average, and this wage gap hasn't changed in recent years.
     </p>
   </div>
-</div>
-  <div class="vis-container">
+
   <div class="vis-box">
     <h2>Median Income by Industry</h2>
     <div id="vis3"></div>
@@ -60,8 +64,8 @@
       Higher education levels correlate strongly with higher median weekly incomes, those with the highest degrees are making almost double of those with no education.
     </p>
   </div>
-</div>
-<div class="vis-container">
+
+
   <div class="vis-box">
     <h2>Mean vs Median Weekly Gross Household Income Over Time</h2>
     <div id="vis5"></div>
@@ -76,7 +80,7 @@
       Here we can see that the gap between median and mean is growing, indicating that with regards to net worth, the richest households are accumulating more wealth than the rest. 
     </p>
   </div>
-</div>
+
   
 <script>
   const spec1 = {
@@ -490,6 +494,7 @@ const spec6 = {
 
 </body>
 </html>
+
 
 
 
