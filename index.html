@@ -55,7 +55,7 @@
     <h2>Median Weekly Earnings Line Chart</h2>
     <div id="vis2"></div>
     <p class="vis-description">
-      Even when accounting for number of hours worked, in Australia, men make more money on average, and this wage gap hasn't changed in recent years.
+      Even when accounting for number of hours worked, in Australia, <b>men make more money</b> on average, and this wage gap hasn't changed in recent years.
     </p>
   </div>
 
@@ -63,7 +63,7 @@
     <h2>Median Income by Industry</h2>
     <div id="vis3"></div>
     <p class="vis-description">
-      The data shows that mining consistently offers the highest median weekly earnings, with a noticeable increase from August 2019 to August 2024 across almost all industries
+      The data shows that mining consistently offers the highest median weekly earnings, with a noticeable increase from August 2019 to August 2024 across almost all industries.
     </p>
   </div>
   <div class="vis-box">
@@ -79,14 +79,14 @@
     <h2>Mean vs Median Weekly Gross Household Income Over Time</h2>
     <div id="vis5"></div>
     <p class="vis-description">
-      We can see that both mean and median income is growing, however mean is consistently greater than median, indicating a small number of households having significantly higher income than the majority
+      We can see that both mean and median <b>income is growing</b>, however mean is consistently greater than median, indicating a small number of households having significantly higher income than the majority
     </p>
   </div>
   <div class="vis-box">
     <h2>Mean vs Median Household Net Worth 2009-20</h2>
     <div id="vis6"></div>
     <p class="vis-description">
-      Here we can see that the gap between median and mean is growing, indicating that with regards to net worth, the richest households are accumulating more wealth than the rest. 
+      Here we can see that the gap between median and mean is growing, indicating that with regards to net worth, <b>the richest households are accumulating more wealth than the rest</b>. 
     </p>
   </div>
  <div class="vis-box">
@@ -100,7 +100,7 @@
     <h2>Income quintile by country of birth</h2>
     <div id="vis8"></div>
     <p class="vis-description">
-    Here we can see that Australian-born individuals and those from English-speaking countries are earning a larger share of the income.
+    Here we can see that Australian-born individuals and those from English-speaking countries are <b>earning a larger share of the income</b>.
     </p>
   </div>
   <div class="vis-box">
@@ -613,21 +613,41 @@ const spec7 = {
       { "field": "Percent", "type": "quantitative" }
     ]
   }
-}
+};
+const globalConfig = {
+  config: {
+    axis: {
+      labelFontSize: 14,
+      titleFontSize: 16,
+      labelFontWeight: "bold",
+      titleFontWeight: "bold"
+    },
+    legend: {
+      labelFontSize: 12,
+      titleFontSize: 14
+    },
+    title: {
+      fontSize: 18,
+      fontWeight: "bold"
+    }
+  }
+};
 
 
-  vegaEmbed('#vis1', spec1).then(console.log).catch(console.error);
-  vegaEmbed('#vis2', spec2).then(console.log).catch(console.error);
-  vegaEmbed('#vis3', spec3).then(console.log).catch(console.error);
-  vegaEmbed('#vis4', spec4).then(console.log).catch(console.error);
-  vegaEmbed('#vis5', spec5).then(console.log).catch(console.error);
-  vegaEmbed('#vis6', spec6).then(console.log).catch(console.error);
-  vegaEmbed('#vis7', spec7).then(console.log).catch(console.error);
-  vegaEmbed('#vis8', spec8).then(console.log).catch(console.error);
+
+  vegaEmbed('#vis1', spec1,globalConfig).then(console.log).catch(console.error);
+  vegaEmbed('#vis2', spec2,globalConfig).then(console.log).catch(console.error);
+  vegaEmbed('#vis3', spec3,globalConfig).then(console.log).catch(console.error);
+  vegaEmbed('#vis4', spec4,globalConfig).then(console.log).catch(console.error);
+  vegaEmbed('#vis5', spec5,globalConfig).then(console.log).catch(console.error);
+  vegaEmbed('#vis6', spec6,globalConfig).then(console.log).catch(console.error);
+  vegaEmbed('#vis7', spec7,globalConfig).then(console.log).catch(console.error);
+  vegaEmbed('#vis8', spec8,globalConfig).then(console.log).catch(console.error);
 </script>
 
 </body>
 </html>
+
 
 
 
