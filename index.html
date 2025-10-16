@@ -473,18 +473,18 @@ const spec6 = {
   "height": 400,
   "data": {
     "values": [
-      { "Year": "2009–10", "Type": "Mean", "NetWorth": 878 },
-      { "Year": "2009–10", "Type": "Median", "NetWorth": 519 },
-      { "Year": "2011–12", "Type": "Mean", "NetWorth": 842 },
-      { "Year": "2011–12", "Type": "Median", "NetWorth": 502 },
-      { "Year": "2013–14", "Type": "Mean", "NetWorth": 893 },
-      { "Year": "2013–14", "Type": "Median", "NetWorth": 509 },
-      { "Year": "2015–16", "Type": "Mean", "NetWorth": 993 },
-      { "Year": "2015–16", "Type": "Median", "NetWorth": 563 },
-      { "Year": "2017–18", "Type": "Mean", "NetWorth": 1054 },
-      { "Year": "2017–18", "Type": "Median", "NetWorth": 576 },
-      { "Year": "2019–20", "Type": "Mean", "NetWorth": 1042 },
-      { "Year": "2019–20", "Type": "Median", "NetWorth": 579 }
+      { "Year": "2009–10", "Type": "Mean", "Net Worth": 878 },
+      { "Year": "2009–10", "Type": "Median", "Net Worth": 519 },
+      { "Year": "2011–12", "Type": "Mean", "Net Worth": 842 },
+      { "Year": "2011–12", "Type": "Median", "Net Worth": 502 },
+      { "Year": "2013–14", "Type": "Mean", "Net Worth": 893 },
+      { "Year": "2013–14", "Type": "Median", "Net Worth": 509 },
+      { "Year": "2015–16", "Type": "Mean", "Net Worth": 993 },
+      { "Year": "2015–16", "Type": "Median", "Net Worth": 563 },
+      { "Year": "2017–18", "Type": "Mean", "Net Worth": 1054 },
+      { "Year": "2017–18", "Type": "Median", "Net Worth": 576 },
+      { "Year": "2019–20", "Type": "Mean", "Net Worth": 1042 },
+      { "Year": "2019–20", "Type": "Median", "Net Worth": 579 }
     ]
   },
   "mark": {
@@ -498,7 +498,7 @@ const spec6 = {
       "title": "Year"
     },
     "y": {
-      "field": "NetWorth",
+      "field": "Net Worth",
       "type": "quantitative",
       "title": "Household Net Worth ($'000)"
     },
@@ -511,7 +511,7 @@ const spec6 = {
     "tooltip": [
       { "field": "Year" },
       { "field": "Type" },
-      { "field": "NetWorth" }
+      { "field": "Net Worth" }
     ]
   }
 };
@@ -566,29 +566,29 @@ const spec7 = {
   "height": 400,
   "data": {
     "values": [
-      { "CountryOfBirth": "Other", "Quintile": "Lowest 20%", "Percent": 26 },
-      { "CountryOfBirth": "Other", "Quintile": "Second 20%", "Percent": 21 },
-      { "CountryOfBirth": "Other", "Quintile": "Third 20%", "Percent": 19 },
-      { "CountryOfBirth": "Other", "Quintile": "Fourth 20%", "Percent": 18 },
-      { "CountryOfBirth": "Other", "Quintile": "Highest 20%", "Percent": 16 },
+      { "Country Of Birth": "Other", "Quintile": "Lowest 20%", "Percent": 26 },
+      { "Country Of Birth": "Other", "Quintile": "Second 20%", "Percent": 21 },
+      { "Country Of Birth": "Other", "Quintile": "Third 20%", "Percent": 19 },
+      { "Country Of Birth": "Other", "Quintile": "Fourth 20%", "Percent": 18 },
+      { "Country Of Birth": "Other", "Quintile": "Highest 20%", "Percent": 16 },
 
-      { "CountryOfBirth": "English-speaking", "Quintile": "Lowest 20%", "Percent": 18 },
-      { "CountryOfBirth": "English-speaking", "Quintile": "Second 20%", "Percent": 18 },
-      { "CountryOfBirth": "English-speaking", "Quintile": "Third 20%", "Percent": 17 },
-      { "CountryOfBirth": "English-speaking", "Quintile": "Fourth 20%", "Percent": 20 },
-      { "CountryOfBirth": "English-speaking", "Quintile": "Highest 20%", "Percent": 27 },
+      { "Country Of Birth": "English-speaking", "Quintile": "Lowest 20%", "Percent": 18 },
+      { "Country Of Birth": "English-speaking", "Quintile": "Second 20%", "Percent": 18 },
+      { "Country Of Birth": "English-speaking", "Quintile": "Third 20%", "Percent": 17 },
+      { "Country Of Birth": "English-speaking", "Quintile": "Fourth 20%", "Percent": 20 },
+      { "Country Of Birth": "English-speaking", "Quintile": "Highest 20%", "Percent": 27 },
 
-      { "CountryOfBirth": "Australia", "Quintile": "Lowest 20%", "Percent": 18 },
-      { "CountryOfBirth": "Australia", "Quintile": "Second 20%", "Percent": 18 },
-      { "CountryOfBirth": "Australia", "Quintile": "Third 20%", "Percent": 20 },
-      { "CountryOfBirth": "Australia", "Quintile": "Fourth 20%", "Percent": 21 },
-      { "CountryOfBirth": "Australia", "Quintile": "Highest 20%", "Percent": 22 }
+      { "Country Of Birth": "Australia", "Quintile": "Lowest 20%", "Percent": 18 },
+      { "Country Of Birth": "Australia", "Quintile": "Second 20%", "Percent": 18 },
+      { "Country Of Birth": "Australia", "Quintile": "Third 20%", "Percent": 20 },
+      { "Country Of Birth": "Australia", "Quintile": "Fourth 20%", "Percent": 21 },
+      { "Country Of Birth": "Australia", "Quintile": "Highest 20%", "Percent": 22 }
     ]
   },
   "mark": "bar",
   "encoding": {
     "y": {
-      "field": "CountryOfBirth",
+      "field": "Country Of Birth",
       "type": "nominal",
       "title": "Country of Birth"
     },
@@ -608,7 +608,7 @@ const spec7 = {
       }
     },
     "tooltip": [
-      { "field": "CountryOfBirth", "type": "nominal" },
+      { "field": "Country Of Birth", "type": "nominal" },
       { "field": "Quintile", "type": "ordinal" },
       { "field": "Percent", "type": "quantitative" }
     ]
@@ -628,6 +628,7 @@ const spec7 = {
 
 </body>
 </html>
+
 
 
 
