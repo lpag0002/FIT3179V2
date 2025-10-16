@@ -566,23 +566,23 @@ const spec7 = {
   "height": 400,
   "data": {
     "values": [
-      { "Country Of Birth": "Other", "Quintile": "Lowest 20%", "Percent": 26 },
-      { "Country Of Birth": "Other", "Quintile": "Second 20%", "Percent": 21 },
-      { "Country Of Birth": "Other", "Quintile": "Third 20%", "Percent": 19 },
-      { "Country Of Birth": "Other", "Quintile": "Fourth 20%", "Percent": 18 },
-      { "Country Of Birth": "Other", "Quintile": "Highest 20%", "Percent": 16 },
+      { "Country Of Birth": "Other", "Quintile": "1st 20%", "Percent": 26 },
+      { "Country Of Birth": "Other", "Quintile": "2nd 20%", "Percent": 21 },
+      { "Country Of Birth": "Other", "Quintile": "3rd 20%", "Percent": 19 },
+      { "Country Of Birth": "Other", "Quintile": "4th 20%", "Percent": 18 },
+      { "Country Of Birth": "Other", "Quintile": "5th 20%", "Percent": 16 },
 
-      { "Country Of Birth": "English-speaking", "Quintile": "Lowest 20%", "Percent": 18 },
-      { "Country Of Birth": "English-speaking", "Quintile": "Second 20%", "Percent": 18 },
-      { "Country Of Birth": "English-speaking", "Quintile": "Third 20%", "Percent": 17 },
-      { "Country Of Birth": "English-speaking", "Quintile": "Fourth 20%", "Percent": 20 },
-      { "Country Of Birth": "English-speaking", "Quintile": "Highest 20%", "Percent": 27 },
+      { "Country Of Birth": "English-speaking", "Quintile": "1st 20%", "Percent": 18 },
+      { "Country Of Birth": "English-speaking", "Quintile": "2nd 20%", "Percent": 18 },
+      { "Country Of Birth": "English-speaking", "Quintile": "3rd 20%", "Percent": 17 },
+      { "Country Of Birth": "English-speaking", "Quintile": "4th 20%", "Percent": 20 },
+      { "Country Of Birth": "English-speaking", "Quintile": "5th 20%", "Percent": 27 },
 
-      { "Country Of Birth": "Australia", "Quintile": "Lowest 20%", "Percent": 18 },
-      { "Country Of Birth": "Australia", "Quintile": "Second 20%", "Percent": 18 },
-      { "Country Of Birth": "Australia", "Quintile": "Third 20%", "Percent": 20 },
-      { "Country Of Birth": "Australia", "Quintile": "Fourth 20%", "Percent": 21 },
-      { "Country Of Birth": "Australia", "Quintile": "Highest 20%", "Percent": 22 }
+      { "Country Of Birth": "Australia", "Quintile": "1st 20%", "Percent": 18 },
+      { "Country Of Birth": "Australia", "Quintile": "2nd 20%", "Percent": 18 },
+      { "Country Of Birth": "Australia", "Quintile": "3rd 20%", "Percent": 20 },
+      { "Country Of Birth": "Australia", "Quintile": "4th 20%", "Percent": 21 },
+      { "Country Of Birth": "Australia", "Quintile": "5th 20%", "Percent": 22 }
     ]
   },
   "mark": "bar",
@@ -596,8 +596,7 @@ const spec7 = {
       "field": "Percent",
       "type": "quantitative",
       "title": "% of People",
-      "stack": "normalize",
-      "sort": ["Lowest 20%", "Second 20%", "Third 20%", "Fourth 20%", "Highest 20%"]
+      "stack": "normalize"
     },
     "color": {
       "legend": { "orient": "bottom"},
@@ -606,8 +605,7 @@ const spec7 = {
       "title": "Income Quintile",
       "scale": {
         "scheme":"blues"
-      },
-      "sort": ["Lowest 20%", "Second 20%", "Third 20%", "Fourth 20%", "Highest 20%"]
+      }
     },
     "tooltip": [
       { "field": "Country Of Birth", "type": "nominal" },
@@ -630,6 +628,7 @@ const spec7 = {
 
 </body>
 </html>
+
 
 
 
