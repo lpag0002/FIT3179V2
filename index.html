@@ -134,7 +134,7 @@
   "encoding": {
     
     "color": {
-      "legend": { "orient": "bottom","titleAlign": "center","labelAlign": "center" },
+      "legend": { "orient": "bottom","titleAlign": "center","labelAlign": "center","direction": "horizontal"},
       "field": "Median weekly income ($)",
       "type": "quantitative",
       "title": "Median Income",
@@ -200,7 +200,7 @@ const spec2 = {
           "type": "quantitative",
           "title": "Median Weekly Earnings ($)"
         },
-        "color": {"field": "Gender", "type": "nominal", "title": "Gender","legend": { "orient": "bottom","titleAlign": "center", "labelAlign": "center"}},
+        "color": {"field": "Gender", "type": "nominal", "title": "Gender","legend": { "orient": "bottom","titleAlign": "center", "labelAlign": "center","direction": "horizontal"}},
         "tooltip": [
           {"field": "Year"},
           {"field": "Gender"},
@@ -434,7 +434,7 @@ const spec4 = {
       "title": "Weekly Gross Household Income ($)"
     },
     "color": {
-      "legend": { "orient": "bottom","titleAlign": "center", "labelAlign": "center" },
+      "legend": { "orient": "bottom","titleAlign": "center", "labelAlign": "center","direction": "horizontal"},
       "field": "Type",
       "type": "nominal",
       "title": "Income Type"
@@ -483,7 +483,7 @@ const spec6 = {
       "title": "Household Net Worth ($'000)"
     },
     "color": {
-      "legend": { "orient": "bottom","titleAlign": "center", "labelAlign": "center"},
+      "legend": { "orient": "bottom","titleAlign": "center", "labelAlign": "center","direction": "horizontal"},
       "field": "Type",
       "type": "nominal",
       "title": "Net Worth Type"
@@ -508,6 +508,7 @@ const spec6 = {
 
 </body>
 </html>
+
 
 
 
