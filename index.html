@@ -96,7 +96,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 600,
   "height": 500,
-  "legend": { "orient": "bottom" },
   "data": {
     "url": "https://raw.githubusercontent.com/lpag0002/FIT3179/refs/heads/main/au-states-topo.json",
     "format": {
@@ -110,14 +109,14 @@
       "from": {
         "data": {
           "values": [
-            { "id": 0, "State": "New South Wales", "Median income": 813 },
-            { "id": 1, "State": "Victoria", "Median income": 803 },
-            { "id": 2, "State": "Queensland", "Median income": 787 },
-            { "id": 3, "State": "South Australia", "Median income": 734 },
-            { "id": 4, "State": "Western Australia", "Median income": 848 },
-            { "id": 5, "State": "Tasmania", "Median income": 701 },
-            { "id": 6, "State": "Northern Territory", "Median income": 936 },
-            { "id": 7, "State": "Australian Capital Territory", "Median income": 1203 },
+            { "id": 0, "State": "New South Wales", "Median weekly income ($)": 813 },
+            { "id": 1, "State": "Victoria", "Median weekly income ($)": 803 },
+            { "id": 2, "State": "Queensland", "Median weekly income ($)": 787 },
+            { "id": 3, "State": "South Australia", "Median weekly income ($)": 734 },
+            { "id": 4, "State": "Western Australia", "Median weekly income ($)": 848 },
+            { "id": 5, "State": "Tasmania", "Median weekly income ($)": 701 },
+            { "id": 6, "State": "Northern Territory", "Median weekly income ($)": 936 },
+            { "id": 7, "State": "Australian Capital Territory", "Median weekly income ($)": 1203 },
           ]
         },
         "key": "id",
@@ -133,6 +132,7 @@
     "stroke": "white"
   },
   "encoding": {
+    "legend": { "orient": "bottom" },
     "color": {
       "field": "Median income",
       "type": "quantitative",
@@ -149,7 +149,6 @@ const spec2 = {
   "description": "Median weekly earnings by gender, with filter and inline labels",
   "width": 600,
   "height": 400,
-  "legend": { "orient": "bottom" },
   "data": {
     "values": [
       {"Year": "Aug-19", "Group": "Employees", "Gender": "Males", "Earnings": 1280},
@@ -194,6 +193,7 @@ const spec2 = {
     {
       "mark": {"type": "line", "point": true},
       "encoding": {
+        "legend": { "orient": "bottom" },
         "x": {"field": "Year", "type": "ordinal", "title": "Year"},
         "y": {
           "field": "Earnings",
@@ -505,6 +505,7 @@ const spec6 = {
 
 </body>
 </html>
+
 
 
 
