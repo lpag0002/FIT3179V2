@@ -36,8 +36,8 @@
 }
 
 #vis1, #vis2 {
-  flex: 1; /* make them take equal width */
-  max-width: 600px; /* limit width */
+  flex: 1;
+  max-width: 600px; 
   height: 500px;
 }
   </style>
@@ -134,13 +134,13 @@
   "encoding": {
     "legend": { "orient": "bottom" },
     "color": {
-      "field": "Median income",
+      "field": "Median weekly income ($)",
       "type": "quantitative",
       "title": "Median Income",
     },
     "tooltip": [
       { "field": "state", "type": "nominal" },
-      { "field": "Median income", "type": "quantitative" }
+      { "field": "Median weekly income ($)", "type": "quantitative" }
     ]
   }
 };
@@ -291,6 +291,7 @@ const spec2 = {
     }
   ],
   "mark": "bar",
+    
   "encoding": {
     "y": {
       "field": "Industry",
@@ -422,6 +423,7 @@ const spec4 = {
     "point": true
   },
   "encoding": {
+    "legend": { "orient": "bottom" },
     "x": {
       "field": "Year",
       "type": "ordinal",
@@ -470,6 +472,7 @@ const spec6 = {
     "point": true
   },
   "encoding": {
+    "legend": { "orient": "bottom" },
     "x": {
       "field": "Year",
       "type": "ordinal",
@@ -505,6 +508,7 @@ const spec6 = {
 
 </body>
 </html>
+
 
 
 
