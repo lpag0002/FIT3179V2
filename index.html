@@ -597,14 +597,13 @@ const spec7 = {
       "type": "quantitative",
       "title": "% of People",
       "stack": "normalize",
-      "sort": ["Lowest 20%", "Second 20%", "Third 20%", "Fourth 20%", "Highest 20%"]
     },
     "color": {
       "legend": { "orient": "bottom"},
       "field": "Quintile",
       "type": "ordinal",
       "title": "Income Quintile",
-      "sort": ["Lowest 20%", "Second 20%", "Third 20%", "Fourth 20%", "Highest 20%"],
+      "domain": ["Lowest 20%", "Second 20%", "Third 20%", "Fourth 20%", "Highest 20%"],
       "scale": {
         "scheme":"blues"
       }
@@ -630,6 +629,7 @@ const spec7 = {
 
 </body>
 </html>
+
 
 
 
