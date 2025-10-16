@@ -92,58 +92,77 @@
 
   
 <script>
-  const spec1 = {
+const spec1 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 600,
   "height": 500,
-  "data": {
-    "url": "https://raw.githubusercontent.com/lpag0002/FIT3179/refs/heads/main/au-states-topo.json",
-    "format": {
-      "type": "topojson",
-      "feature": "austates"
-    }
-  },
-  "transform": [
+  "layer": [
+    // Main map
     {
-      "lookup": "id",
-      "from": {
-        "data": {
-          "values": [
-            { "id": 0, "State": "New South Wales", "Median weekly income ($)": 813 },
-            { "id": 1, "State": "Victoria", "Median weekly income ($)": 803 },
-            { "id": 2, "State": "Queensland", "Median weekly income ($)": 787 },
-            { "id": 3, "State": "South Australia", "Median weekly income ($)": 734 },
-            { "id": 4, "State": "Western Australia", "Median weekly income ($)": 848 },
-            { "id": 5, "State": "Tasmania", "Median weekly income ($)": 701 },
-            { "id": 6, "State": "Northern Territory", "Median weekly income ($)": 936 },
-            { "id": 7, "State": "Australian Capital Territory", "Median weekly income ($)": 1203 },
-          ]
+      "data": {
+        "url": "https://raw.githubusercontent.com/lpag0002/FIT3179/refs/heads/main/au-states-topo.json",
+        "format": { "type": "topojson", "feature": "austates" }
+      },
+      "transform": [
+        {
+          "lookup": "id",
+          "from": {
+            "data": {
+              "values": [
+                { "id": 0, "State": "New South Wales", "Median weekly income ($)": 813 },
+                { "id": 1, "State": "Victoria", "Median weekly income ($)": 803 },
+                { "id": 2, "State": "Queensland", "Median weekly income ($)": 787 },
+                { "id": 3, "State": "South Australia", "Median weekly income ($)": 734 },
+                { "id": 4, "State": "Western Australia", "Median weekly income ($)": 848 },
+                { "id": 5, "State": "Tasmania", "Median weekly income ($)": 701 },
+                { "id": 6, "State": "Northern Territory", "Median weekly income ($)": 936 },
+                { "id": 7, "State": "Australian Capital Territory", "Median weekly income ($)": 1203 }
+              ]
+            },
+            "key": "id",
+            "fields": ["Median weekly income ($)", "State"]
+          }
+        }
+      ],
+      "projection": { "type": "mercator" },
+      "mark": { "type": "geoshape", "stroke": "white" },
+      "encoding": {
+        "color": {
+          "field": "Median weekly income ($)",
+          "type": "quantitative",
+          "title": "Median Income",
+          "legend": { "orient": "bottom" }
         },
-        "key": "id",
-        "fields": ["Median weekly income ($)", "state"]
+        "tooltip": [
+          { "field": "State", "type": "nominal" },
+          { "field": "Median weekly income ($)", "type": "quantitative" }
+        ]
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          { "State": "ACT", "Longitude": 149.13, "Latitude": -35.28, "Label": "Highest: ACT" }
+        ]
+      },
+      "projection": { "type": "mercator" },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "dy": -10,
+        "fontWeight": "bold",
+        "fontSize": 14,
+        "color": "red"
+      },
+      "encoding": {
+        "x": { "field": "Longitude", "type": "quantitative" },
+        "y": { "field": "Latitude", "type": "quantitative" },
+        "text": { "field": "Label", "type": "nominal" }
       }
     }
-  ],
-  "projection": {
-    "type": "mercator"
-  },
-  "mark": {
-    "type": "geoshape",
-    "stroke": "white"
-  },
-  "encoding": {
-    
-    "color": {
-      "legend": { "orient": "bottom"},
-      "field": "Median weekly income ($)",
-      "type": "quantitative",
-      "title": "Median Income",
-    },
-    "tooltip": [
-      { "field": "state", "type": "nominal" },
-      { "field": "Median weekly income ($)", "type": "quantitative" }
-    ]
-  }
+  ]
 };
 const spec2 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
@@ -293,7 +312,7 @@ const spec2 = {
     "color": {
       "field": "Income",
       "type": "quantitative",
-      "scale": { "scheme": "blues" }
+      "scale": { "scheme": "blues" },
       "legend": null
     },
     "tooltip": [
@@ -366,7 +385,7 @@ const spec4 = {
     "color": {
       "field": "Income",
       "type": "quantitative",
-      "scale": { "scheme": "blues" }
+      "scale": { "scheme": "blues" },
       "legend": null
     },
     "tooltip": [
@@ -496,6 +515,7 @@ const spec6 = {
 
 </body>
 </html>
+
 
 
 
