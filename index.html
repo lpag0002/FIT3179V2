@@ -96,6 +96,19 @@
     Unexpectedly, there isn’t a clear trend between rent prices and income, suggesting that some states have more disposable income than others.
     </p>
   </div>
+ <div class="vis-box">
+    <h2>Income quintile by country of birth</h2>
+    <div id="vis8"></div>
+    <p class="vis-description">
+    Here we can see that Australian-born individuals and those from English-speaking countries are earning a larger share of the income.
+    </p>
+  </div>
+  <div class="vis-box">
+    <h2>Conclusion</h2>
+    <p class="vis-description">
+    Income and wealth in Australia vary by state, industry, education, and demographic factors. While overall earnings are increasing, disparities remain, with some regions and groups earning significantly more than others.
+    </p>
+  </div>
   
 <script>
 const spec1 = {
@@ -551,6 +564,60 @@ const spec7 = {
       { "field": "MonthlyRent", "type": "quantitative", "title": "Monthly Rent ($)" }
     ]
   }
+};
+  const spec8 = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Income Distribution by Country of Birth",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "values": [
+      { "CountryOfBirth": "Other", "Quintile": "Lowest 20%", "Percent": 26 },
+      { "CountryOfBirth": "Other", "Quintile": "Second 20%", "Percent": 21 },
+      { "CountryOfBirth": "Other", "Quintile": "Third 20%", "Percent": 19 },
+      { "CountryOfBirth": "Other", "Quintile": "Fourth 20%", "Percent": 18 },
+      { "CountryOfBirth": "Other", "Quintile": "Highest 20%", "Percent": 16 },
+
+      { "CountryOfBirth": "Major English-speaking country", "Quintile": "Lowest 20%", "Percent": 18 },
+      { "CountryOfBirth": "Major English-speaking country", "Quintile": "Second 20%", "Percent": 18 },
+      { "CountryOfBirth": "Major English-speaking country", "Quintile": "Third 20%", "Percent": 17 },
+      { "CountryOfBirth": "Major English-speaking country", "Quintile": "Fourth 20%", "Percent": 20 },
+      { "CountryOfBirth": "Major English-speaking country", "Quintile": "Highest 20%", "Percent": 27 },
+
+      { "CountryOfBirth": "Australia", "Quintile": "Lowest 20%", "Percent": 18 },
+      { "CountryOfBirth": "Australia", "Quintile": "Second 20%", "Percent": 18 },
+      { "CountryOfBirth": "Australia", "Quintile": "Third 20%", "Percent": 20 },
+      { "CountryOfBirth": "Australia", "Quintile": "Fourth 20%", "Percent": 21 },
+      { "CountryOfBirth": "Australia", "Quintile": "Highest 20%", "Percent": 22 }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "y": {
+      "field": "CountryOfBirth",
+      "type": "nominal",
+      "title": "Country of Birth"
+    },
+    "x": {
+      "field": "Percent",
+      "type": "quantitative",
+      "title": "% of People",
+      "stack": "normalize"  
+    },
+    "color": {
+      "field": "Quintile",
+      "type": "ordinal",
+      "title": "Income Quintile",
+      "scale": {
+        "scheme":"blues"
+      }
+    },
+    "tooltip": [
+      { "field": "CountryOfBirth", "type": "nominal" },
+      { "field": "Quintile", "type": "ordinal" },
+      { "field": "Percent", "type": "quantitative" }
+    ]
+  }
 }
 
 
@@ -561,10 +628,12 @@ const spec7 = {
   vegaEmbed('#vis5', spec5).then(console.log).catch(console.error);
   vegaEmbed('#vis6', spec6).then(console.log).catch(console.error);
   vegaEmbed('#vis7', spec7).then(console.log).catch(console.error);
+  vegaEmbed('#vis8', spec8).then(console.log).catch(console.error);
 </script>
 
 </body>
 </html>
+
 
 
 
