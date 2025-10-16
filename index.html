@@ -385,15 +385,7 @@ const spec4 = {
     "y": {
       "field": "Education",
       "type": "nominal",
-      "sort": [
-        "No Non-School Qualifications",
-        "Certificate I/II and Other",
-        "Certificate III/IV",
-        "Advanced Diploma/Diploma",
-        "Bachelor Degree",
-        "Graduate Diploma/Graduate Certificate",
-        "Postgraduate Degree"
-      ],
+      "sort": {"field": "Income", "op": "max", "order": "descending"},
       "title": "Education Level"
     },
     "x": {
@@ -633,6 +625,7 @@ const spec7 = {
 
 </body>
 </html>
+
 
 
 
