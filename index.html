@@ -9,7 +9,7 @@
   <style>
     body {
       font-family: sans-serif;
-      margin: 10px;
+      margin: 30px;
       background-color: #a8dadc; 
     }
     #vis {
@@ -19,7 +19,7 @@
    h1 {
     text-align: center;  
     color: #333;         
-    margin-top: 50px;   
+    margin-top: 30px;   
    }
     .vis-box {
   width: 800px;
@@ -29,7 +29,7 @@
   justify-content: center; 
   align-items: center;
   background-color: #ffffff; 
-  margin: 100px auto;
+  margin: 30px auto;
   box-sizing: border-box;
   border-radius: 10px;
   text-align: center;      
@@ -132,8 +132,9 @@
     "stroke": "white"
   },
   "encoding": {
-    "legend": { "orient": "bottom" },
+    
     "color": {
+      "legend": { "orient": "bottom" },
       "field": "Median weekly income ($)",
       "type": "quantitative",
       "title": "Median Income",
@@ -193,14 +194,13 @@ const spec2 = {
     {
       "mark": {"type": "line", "point": true},
       "encoding": {
-        "legend": { "orient": "bottom" },
         "x": {"field": "Year", "type": "ordinal", "title": "Year"},
         "y": {
           "field": "Earnings",
           "type": "quantitative",
           "title": "Median Weekly Earnings ($)"
         },
-        "color": {"field": "Gender", "type": "nominal", "title": "Gender"},
+        "color": {"field": "Gender", "type": "nominal", "title": "Gender","legend": { "orient": "bottom" }},
         "tooltip": [
           {"field": "Year"},
           {"field": "Gender"},
@@ -423,7 +423,6 @@ const spec4 = {
     "point": true
   },
   "encoding": {
-    "legend": { "orient": "bottom" },
     "x": {
       "field": "Year",
       "type": "ordinal",
@@ -435,6 +434,7 @@ const spec4 = {
       "title": "Weekly Gross Household Income ($)"
     },
     "color": {
+      "legend": { "orient": "bottom" },
       "field": "Type",
       "type": "nominal",
       "title": "Income Type"
@@ -472,7 +472,6 @@ const spec6 = {
     "point": true
   },
   "encoding": {
-    "legend": { "orient": "bottom" },
     "x": {
       "field": "Year",
       "type": "ordinal",
@@ -484,6 +483,7 @@ const spec6 = {
       "title": "Household Net Worth ($'000)"
     },
     "color": {
+      "legend": { "orient": "bottom" },
       "field": "Type",
       "type": "nominal",
       "title": "Net Worth Type"
@@ -508,6 +508,7 @@ const spec6 = {
 
 </body>
 </html>
+
 
 
 
