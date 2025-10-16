@@ -97,7 +97,6 @@ const spec1 = {
   "width": 600,
   "height": 500,
   "layer": [
-    // Main map
     {
       "data": {
         "url": "https://raw.githubusercontent.com/lpag0002/FIT3179/refs/heads/main/au-states-topo.json",
@@ -141,17 +140,26 @@ const spec1 = {
       }
     },
 
-    {
+{
+  "data": {
+    "values": [
+      { "Longitude": 149.13, "Latitude": -35.28, "Label": "Highest: ACT" }
+    ]
+  },
+  "projection": { "type": "mercator" },
   "mark": {
     "type": "text",
-    "text": "Highest: ACT",
-    "x": 0,
-    "y": 0,
-    "dx": 0,
-    "dy": 0,
+    "align": "left",
+    "dx": 10,
+    "dy": -10,
     "fontWeight": "bold",
     "fontSize": 14,
     "color": "blue"
+  },
+  "encoding": {
+    "x": { "field": "Longitude", "type": "quantitative" },
+    "y": { "field": "Latitude", "type": "quantitative" },
+    "text": { "field": "Label", "type": "nominal" }
   }
 }
   ]
@@ -507,6 +515,7 @@ const spec6 = {
 
 </body>
 </html>
+
 
 
 
