@@ -198,9 +198,6 @@ const spec2 = {
       {"Year": "Aug-23", "Group": "Employees", "Gender": "Females", "Earnings": 1150},
       {"Year": "Aug-24", "Group": "Employees", "Gender": "Females", "Earnings": 1200},
 
-      {"Year": "Aug-19", "Group": "Employees", "Gender": "Persons", "Earnings": 1100},
-      {"Year": "Aug-23", "Group": "Employees", "Gender": "Persons", "Earnings": 1300},
-      {"Year": "Aug-24", "Group": "Employees", "Gender": "Persons", "Earnings": 1396},
 
       {"Year": "Aug-19", "Group": "Full-time employees", "Gender": "Males", "Earnings": 1473},
       {"Year": "Aug-23", "Group": "Full-time employees", "Gender": "Males", "Earnings": 1700},
@@ -210,9 +207,6 @@ const spec2 = {
       {"Year": "Aug-23", "Group": "Full-time employees", "Gender": "Females", "Earnings": 1500},
       {"Year": "Aug-24", "Group": "Full-time employees", "Gender": "Females", "Earnings": 1598},
 
-      {"Year": "Aug-19", "Group": "Full-time employees", "Gender": "Persons", "Earnings": 1375},
-      {"Year": "Aug-23", "Group": "Full-time employees", "Gender": "Persons", "Earnings": 1600},
-      {"Year": "Aug-24", "Group": "Full-time employees", "Gender": "Persons", "Earnings": 1700}
     ]
   },
   "params": [
@@ -238,7 +232,15 @@ const spec2 = {
           "type": "quantitative",
           "title": "Median Weekly Earnings ($)"
         },
-        "color": {"field": "Gender", "type": "nominal", "title": "Gender","legend": { "orient": "bottom"}},
+        "color": {
+        "field": "Gender",
+        "type": "nominal",
+        "title": "Gender",
+        "legend": { "orient": "bottom" },
+        "scale": {
+          "range": ["#003366", "#8B0000"]
+        }
+          },
         "tooltip": [
           {"field": "Year"},
           {"field": "Gender"},
@@ -626,6 +628,7 @@ const spec7 = {
 
 </body>
 </html>
+
 
 
 
