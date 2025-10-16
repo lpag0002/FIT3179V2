@@ -89,7 +89,13 @@
       Here we can see that the gap between median and mean is growing, indicating that with regards to net worth, the richest households are accumulating more wealth than the rest. 
     </p>
   </div>
-
+ <div class="vis-box">
+    <h2>State Income vs Rent</h2>
+    <div id="vis6"></div>
+    <p class="vis-description">
+    TODO
+    </p>
+  </div>
   
 <script>
 const spec1 = {
@@ -502,7 +508,50 @@ const spec6 = {
     ]
   }
 };
-
+const spec7 = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Monthly Rent vs Median Weekly Income by State/City",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "values": [
+      { "State": "New South Wales", "City": "Sydney", "MonthlyRent": 3393, "MedianIncome": 813 },
+      { "State": "Victoria", "City": "Melbourne", "MonthlyRent": 2699, "MedianIncome": 803 },
+      { "State": "Queensland", "City": "Brisbane", "MonthlyRent": 3164, "MedianIncome": 787 },
+      { "State": "South Australia", "City": "Adelaide", "MonthlyRent": 2477, "MedianIncome": 734 },
+      { "State": "Western Australia", "City": "Perth", "MonthlyRent": 2716, "MedianIncome": 848 },
+      { "State": "Tasmania", "City": "Hobart", "MonthlyRent": 2030, "MedianIncome": 701 },
+      { "State": "Northern Territory", "City": "Darwin", "MonthlyRent": 1836, "MedianIncome": 936 },
+      { "State": "Australian Capital Territory", "City": "Canberra", "MonthlyRent": 2168, "MedianIncome": 1203 }
+    ]
+  },
+  "mark": {
+    "type": "point",
+    "filled": true,
+    "size": 100,
+    "color": "#1f77b4"
+  },
+  "encoding": {
+    "x": {
+      "field": "MedianIncome",
+      "type": "quantitative",
+      "title": "Median Weekly Income ($)",
+      "scale": { "domainMin": 650 }
+    },
+    "y": {
+      "field": "MonthlyRent",
+      "type": "quantitative",
+      "title": "Monthly Rent ($)",
+      "scale": { "domainMin": 1700 }
+    },
+    "tooltip": [
+      { "field": "City", "type": "nominal" },
+      { "field": "State", "type": "nominal" },
+      { "field": "MedianIncome", "type": "quantitative", "title": "Median Weekly Income ($)" },
+      { "field": "MonthlyRent", "type": "quantitative", "title": "Monthly Rent ($)" }
+    ]
+  }
+}
 
 
   vegaEmbed('#vis1', spec1).then(console.log).catch(console.error);
@@ -511,10 +560,12 @@ const spec6 = {
   vegaEmbed('#vis4', spec4).then(console.log).catch(console.error);
   vegaEmbed('#vis5', spec5).then(console.log).catch(console.error);
   vegaEmbed('#vis6', spec6).then(console.log).catch(console.error);
+  vegaEmbed('#vis7', spec7).then(console.log).catch(console.error);
 </script>
 
 </body>
 </html>
+
 
 
 
