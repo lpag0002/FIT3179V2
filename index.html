@@ -43,6 +43,12 @@
   </style>
 </head>
 <body>
+    <div class="vis-box">
+    <h2>Who's Making Australia's Money?</h2>
+    <p class="vis-description">
+    Income in Australia varies across many demographics, such as location, gender, and education, and has also changed over time. Below, we take a look at who has been making the money and who might be falling behind.
+    </p>
+  </div>
 <h1>Income Accross Australia</h1>
   <div class="vis-box">
     <h2>Median Income by Australian State</h2>
@@ -74,7 +80,12 @@
     </p>
   </div>
 
-
+  <div class="vis-box">
+    <h2>How Does Median Income Relate to Other Key Metrics?</h2>
+    <p class="vis-description">
+    Several key statistics can be used to measure income, such as the average (mean) and median. Comparing these helps reveal how income is distributed across Australia. We can also examine how income relates to other factors, such as country of birth and rent.
+    </p>
+  </div>
   <div class="vis-box">
     <h2>Mean vs Median Weekly Gross Household Income Over Time</h2>
     <div id="vis5"></div>
@@ -532,33 +543,49 @@ const spec7 = {
       { "State": "Australian Capital Territory", "City": "Canberra", "MonthlyRent": 2168, "MedianIncome": 1203 }
     ]
   },
-  "mark": {
-    "type": "point",
-    "filled": true,
-    "size": 100,
-    "color": "#1f77b4"
-  },
-  "encoding": {
-    "x": {
-      "field": "MedianIncome",
-      "type": "quantitative",
-      "title": "Median Weekly Income ($)",
-      "scale": { "domainMin": 650 }
+  "layer": [
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 100,
+        "color": "#1f77b4"
+      },
+      "encoding": {
+        "x": { "field": "MedianIncome", "type": "quantitative", "title": "Median Weekly Income ($)", "scale": { "domainMin": 650 } },
+        "y": { "field": "MonthlyRent", "type": "quantitative", "title": "Monthly Rent ($)", "scale": { "domainMin": 1700 } },
+        "tooltip": [
+          { "field": "City", "type": "nominal" },
+          { "field": "State", "type": "nominal" },
+          { "field": "MedianIncome", "type": "quantitative", "title": "Median Weekly Income ($)" },
+          { "field": "MonthlyRent", "type": "quantitative", "title": "Monthly Rent ($)" }
+        ]
+      }
     },
-    "y": {
-      "field": "MonthlyRent",
-      "type": "quantitative",
-      "title": "Monthly Rent ($)",
-      "scale": { "domainMin": 1700 }
-    },
-    "tooltip": [
-      { "field": "City", "type": "nominal" },
-      { "field": "State", "type": "nominal" },
-      { "field": "MedianIncome", "type": "quantitative", "title": "Median Weekly Income ($)" },
-      { "field": "MonthlyRent", "type": "quantitative", "title": "Monthly Rent ($)" }
-    ]
-  }
+    {
+      "data": {
+        "values": [
+          { "City": "Sydney", "MedianIncome": 813, "MonthlyRent": 3393, "label": "Sydney has the highest rent" }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "dy": 10,
+        "fontWeight": "bold",
+        "fontSize": 14,
+        "color": "darkblue"
+      },
+      "encoding": {
+        "x": { "field": "MedianIncome", "type": "quantitative" },
+        "y": { "field": "MonthlyRent", "type": "quantitative" },
+        "text": { "field": "label" }
+      }
+    }
+  ]
 };
+
   const spec8 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Income Distribution by Country of Birth",
@@ -647,6 +674,7 @@ const globalConfig = {
 
 </body>
 </html>
+
 
 
 
